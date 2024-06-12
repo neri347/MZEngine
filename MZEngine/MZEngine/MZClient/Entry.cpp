@@ -62,6 +62,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     // Engine Finalize
 
+
+    UnregisterClass(szWindowClass, hInstance);
     return 0;
 }
 
