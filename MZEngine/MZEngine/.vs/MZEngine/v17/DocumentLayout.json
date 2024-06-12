@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\MZEngine\\MZEngine\\MZEngine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\MZClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|solutionrelative:MZClient\\MZClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|solutionrelative:MZClient\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|solutionrelative:MZClient\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\targetver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C02A9B5E-CB47-4D88-96D3-7A75F3D327B3}|MZClient\\MZClient.vcxproj|solutionrelative:MZClient\\targetver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "targetver.h",
+              "DocumentMoniker": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\targetver.h",
+              "RelativeDocumentMoniker": "MZClient\\targetver.h",
+              "ToolTip": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\targetver.h",
+              "RelativeToolTip": "MZClient\\targetver.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-12T03:50:09.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "framework.h",
+              "DocumentMoniker": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\framework.h",
+              "RelativeDocumentMoniker": "MZClient\\framework.h",
+              "ToolTip": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\framework.h",
+              "RelativeToolTip": "MZClient\\framework.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-12T03:49:49.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MZClient.cpp",
-              "DocumentMoniker": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\MZClient.cpp",
-              "RelativeDocumentMoniker": "MZClient\\MZClient.cpp",
-              "ToolTip": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\MZClient.cpp",
-              "RelativeToolTip": "MZClient\\MZClient.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAATAAAA",
+              "Title": "Entry.cpp",
+              "DocumentMoniker": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\Entry.cpp",
+              "RelativeDocumentMoniker": "MZClient\\Entry.cpp",
+              "ToolTip": "D:\\MZEngine\\MZEngine\\MZEngine\\MZClient\\Entry.cpp",
+              "RelativeToolTip": "MZClient\\Entry.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-11T13:37:14.381Z",
               "EditorCaption": ""

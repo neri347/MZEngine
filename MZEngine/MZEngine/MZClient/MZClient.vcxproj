@@ -146,12 +146,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="MZClient.h" />
+    <ClInclude Include="Entry.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MZClient.cpp" />
+    <ClCompile Include="Entry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MZClient.rc" />
