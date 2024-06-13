@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\MZEngine\MZEngine\MZEngine\Build\Debug\MZClient.exe</FullPath>
+      <FullPath>D:\ProjectMZ\MZEngine\MZEngine\Build\Debug\MZClient.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
