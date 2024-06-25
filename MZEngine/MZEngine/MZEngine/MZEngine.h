@@ -1,21 +1,27 @@
 #pragma once
 #include "IMZEngine.h"
+#include "Singleton.h"
 
-class MZEngine : public IMZEngine
+namespace MZGraphics
 {
-	friend IMZEngine* CreateEngine();
+	class I3DRenderer;
+}
 
-public:
-	MZEngine();
-	virtual ~MZEngine();
+namespace MZCore
+{
 
-	static MZEngine& Instance();
+	class MZEngine : public IMZEngine, public Singleton<MZEngine>
+	{
+	public:
+		friend class Singleton<MZEngine>;
+		virtual ~MZEngine();
+		virtual void Initialize(HWND hWnd, UINT screenWidth, UINT screenHeight) override;
+		virtual void Run() override;
+		virtual void Finalize() override;
 
-	virtual void Initialize(HWND hWnd, UINT screenWidth, UINT screenHeight) override;
-	virtual void Run() override;
-	virtual void Finalize() override;
+	private:
+		MZEngine();
+		MZGraphics::I3DRenderer* _renderer;
+	};
 
-private:
-	static MZEngine* _instance;
-
-};
+}

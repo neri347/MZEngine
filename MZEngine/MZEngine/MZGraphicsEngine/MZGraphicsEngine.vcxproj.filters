@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="00_GraphicsProcess">
+      <UniqueIdentifier>{46dadfcc-1d5e-4b81-bcd3-0a563e76ce7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Resources">
+      <UniqueIdentifier>{a920e7b2-6975-454b-b836-f1ad60e9b154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Resources\Device">
+      <UniqueIdentifier>{ec404c88-3284-4515-8d86-1997bc741be0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphicsProcess.h">
+      <Filter>00_GraphicsProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="DX11Device.h">
+      <Filter>01_Resources\Device</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GraphicsProcess.cpp">
+      <Filter>00_GraphicsProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="DX11Device.cpp">
+      <Filter>01_Resources\Device</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

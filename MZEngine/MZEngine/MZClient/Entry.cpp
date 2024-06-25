@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "Entry.h"
 #include "Client.h"
+#include "../MZEngine/IMZEngine.h"
 
 #define MAX_LOADSTRING 100
 
@@ -17,6 +18,7 @@ HWND hWnd;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
+void				ChangeResolution();
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 
@@ -33,32 +35,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	LoadStringW(hInstance, IDC_MZCLIENT, szWindowClass, MAX_LOADSTRING);
 	MyRegisterClass(hInstance);
 
-	// change resolution depending on display settings
-	DEVMODE dmSettings;
-	memset(&dmSettings, 0, sizeof(dmSettings));
-	if (!EnumDisplaySettings(NULL, ENUM_CURRENT_SETTINGS, &dmSettings))
-	{
-		MessageBox(NULL, L"Could Not Enum Display Settings", L"Error", MB_OK);
-		PostQuitMessage(0);
-	}
-
-	int result = ChangeDisplaySettings(&dmSettings, CDS_FULLSCREEN);
-	if (result != DISP_CHANGE_SUCCESSFUL)
-	{
-		MessageBox(NULL, L"Display Mode Not Compatible", L"Error", MB_OK);
-		PostQuitMessage(0);
-	}
-
-	screenWidth = dmSettings.dmPelsWidth;
-	screenHeight = dmSettings.dmPelsHeight;
+	ChangeResolution();
 
 	// Perform application initialization:
 	if (!InitInstance(hInstance, nCmdShow))
 	{
 		return FALSE;
 	}
-
+	
 	// Engine Initialize
+	IMZEngine* engine = CreateEngine();
+	engine->Initialize(hWnd, screenWidth, screenHeight);
 
 	// Client Initialize
 	Client* client = new Client();
@@ -80,11 +67,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		else
 		{
 			// Engine Loop
+			engine->Run();
 		}
 	}
 
 	// Engine Finalize
-
+	engine->Finalize();
+	ReleaseEngine(engine);
 
 	UnregisterClass(szWindowClass, hInstance);
 	return 0;
@@ -116,6 +105,32 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 	return RegisterClassExW(&wcex);
 }
 
+//	FUNCTION: ChangeResolution()
+//
+//	PURPOSE: Change resolution before create main window
+//
+void ChangeResolution()
+{
+	// change resolution depending on display settings
+	DEVMODE dmSettings;
+	memset(&dmSettings, 0, sizeof(dmSettings));
+	if (!EnumDisplaySettings(NULL, ENUM_CURRENT_SETTINGS, &dmSettings))
+	{
+		MessageBox(NULL, L"Could Not Enum Display Settings", L"Error", MB_OK);
+		PostQuitMessage(0);
+	}
+
+	int result = ChangeDisplaySettings(&dmSettings, CDS_FULLSCREEN);
+	if (result != DISP_CHANGE_SUCCESSFUL)
+	{
+		MessageBox(NULL, L"Display Mode Not Compatible", L"Error", MB_OK);
+		PostQuitMessage(0);
+	}
+
+	screenWidth = dmSettings.dmPelsWidth;
+	screenHeight = dmSettings.dmPelsHeight;
+}
+
 //
 //   FUNCTION: InitInstance(HINSTANCE, int)
 //
@@ -130,8 +145,10 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
 	hInst = hInstance; // Store instance handle in our global variable
 
+	// for windowed mode
 	hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
 		0, 0, screenWidth, screenHeight, nullptr, nullptr, hInstance, nullptr);
+
 	// for full screen mode
 	/*hWnd = CreateWindowW(szWindowClass, szTitle, WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN,
 				0, 0, screenWidth, screenHeight, nullptr, nullptr, hInstance, nullptr);*/

@@ -5,7 +5,7 @@
 /// 클라이언트에서 인터페이스의 포인터를 통해
 /// 엔진의 함수들을 실행시킨다.
 
-class IMZEngine
+class IMZEngine abstract
 {
 public:
 	virtual ~IMZEngine() {};

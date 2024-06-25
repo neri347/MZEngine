@@ -1,45 +1,42 @@
 #include "MZEngine.h"
 
-MZEngine* MZEngine::_instance = nullptr;
-
 IMZEngine* CreateEngine()
 {
-	MZEngine::_instance = new MZEngine();
-	return MZEngine::_instance;
+	return &MZCore::MZEngine::Instance();
 }
 
 void ReleaseEngine(IMZEngine* engine)
 {
+	MZCore::MZEngine::Instance().Release();
 	engine = nullptr;
-	_instance
 }
 
-MZEngine::MZEngine()
+namespace MZCore
 {
 
-}
+	MZEngine::MZEngine()
+	{
 
-MZEngine::~MZEngine()
-{
-	delete _instance;
-}
+	}
 
-MZEngine& MZEngine::Instance()
-{
+	MZEngine::~MZEngine()
+	{
 
-}
+	}
 
-void MZEngine::Initialize(HWND hWnd, UINT screenWidth, UINT screenHeight)
-{
+	void MZEngine::Initialize(HWND hWnd, UINT screenWidth, UINT screenHeight)
+	{
 
-}
+	}
 
-void MZEngine::Run()
-{
+	void MZEngine::Run()
+	{
 
-}
+	}
 
-void MZEngine::Finalize()
-{
+	void MZEngine::Finalize()
+	{
+
+	}
 
 }

@@ -7,6 +7,12 @@
     <Filter Include="01_EngineProcess">
       <UniqueIdentifier>{ab29324e-7af2-4a6a-a7e4-64deac153f56}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{12232c4f-290d-4925-86f1-c1ec778ea4bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_System">
+      <UniqueIdentifier>{76f3b4bb-a533-4131-a096-9db26e332a6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IMZEngine.h">
@@ -15,10 +21,19 @@
     <ClInclude Include="MZEngine.h">
       <Filter>01_EngineProcess</Filter>
     </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>02_System</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MZEngine.cpp">
       <Filter>01_EngineProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>02_System</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
